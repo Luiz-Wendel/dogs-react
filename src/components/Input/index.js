@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-const Input = ({ name, label, ...options }) => {
+const Input = ({ name, label, error, ...options }) => {
   return (
     <div className={styles.wrapper}>
       <label htmlFor={name} className={styles.label}>
@@ -15,7 +15,7 @@ const Input = ({ name, label, ...options }) => {
         type="text"
         {...options}
       />
-      <p className={styles.error}>* Error</p>
+      {error && <p className={styles.error}>* {error}</p>}
     </div>
   );
 };
