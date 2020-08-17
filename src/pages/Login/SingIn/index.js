@@ -1,6 +1,7 @@
 import React from 'react';
 
 // Components
+import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 
 const SingIn = () => {
@@ -28,13 +29,16 @@ const SingIn = () => {
     <>
       <h1>SignIn</h1>
       <form onSubmit={handleSignIn}>
-        <input
-          type="text"
+        <Input
+          name="username"
+          label="Username"
           value={username}
           onChange={({ target }) => setUsername(target.value)}
         />
-        <input
-          type="text"
+        <Input
+          name="password"
+          label="Password"
+          type="password"
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
