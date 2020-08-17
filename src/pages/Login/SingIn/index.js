@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import Button from '../../../components/Button';
+
 const SingIn = () => {
   const [username, setUsername] = React.useState();
   const [password, setPassword] = React.useState();
@@ -35,7 +38,7 @@ const SingIn = () => {
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
-        <button>SignIn</button>
+        <Button>SignIn</Button>
       </form>
     </>
   );
