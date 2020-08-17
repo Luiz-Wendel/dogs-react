@@ -1,5 +1,8 @@
 import React from 'react';
 
+// API
+import { TOKEN_POST } from '../../../api';
+
 // Components
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
@@ -15,22 +18,15 @@ const SingIn = () => {
     event.preventDefault();
 
     if (usernameValidate() && passwordValidate()) {
-      const response = await fetch(
-        'https://dogsapi.origamid.dev/json/jwt-auth/v1/token',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(/* {
-          username: username.value,
-          password: password.value,
-        } */),
-        }
-      );
+      const { url, options } = TOKEN_POST({
+        username: username.value,
+        password: password.value,
+      });
+
+      const response = await fetch(url, options);
       const result = await response.json();
 
-      console.log(result);
+      window.localStorage.setItem('token', result.token);
     }
   }
 
