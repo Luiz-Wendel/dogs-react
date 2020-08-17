@@ -1,7 +1,7 @@
 import React from 'react';
 
 // API
-import { TOKEN_POST } from '../../../api';
+import { TOKEN_POST, USER_GET } from '../../../api';
 
 // Components
 import Input from '../../../components/Input';
@@ -14,6 +14,12 @@ const SingIn = () => {
   const { validate: usernameValidate, ...username } = useForm();
   const { validate: passwordValidate, ...password } = useForm();
 
+  React.useEffect(() => {
+    const token = window.localStorage.getItem('token');
+
+    if (token) getUser(token);
+  }, []);
+
   async function handleSignIn(event) {
     event.preventDefault();
 
@@ -24,10 +30,20 @@ const SingIn = () => {
       });
 
       const response = await fetch(url, options);
-      const result = await response.json();
+      const { token } = await response.json();
 
-      window.localStorage.setItem('token', result.token);
+      window.localStorage.setItem('token', token);
+      getUser(token);
     }
+  }
+
+  async function getUser(token) {
+    const { url, options } = USER_GET(token);
+
+    const response = await fetch(url, options);
+    const result = await response.json();
+
+    console.log(result);
   }
 
   return (
