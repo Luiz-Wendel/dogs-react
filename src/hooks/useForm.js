@@ -5,6 +5,11 @@ const validations = {
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: 'Invalid email format!',
   },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/,
+    message:
+      'Password must contain at least one digit, one lower case and one upper case! And must contain at least 6 of the mentioned characters!',
+  },
 };
 
 const useForm = (validation) => {
