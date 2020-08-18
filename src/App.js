@@ -5,6 +5,9 @@ import Routes from './Routes';
 // css
 import './global.css';
 
+// Context
+import { UserStorage } from './context/UserContext';
+
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,9 +16,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes />
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes />
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </>
   );
