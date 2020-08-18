@@ -3,6 +3,7 @@ import React from 'react';
 // Components
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import Error from '../../../components/Error';
 
 // Custom Hooks
 import useForm from '../../../hooks/useForm';
@@ -34,7 +35,7 @@ const SingIn = () => {
         ) : (
           <Button>SignIn</Button>
         )}
-        {error && <p>{error}</p>}
+        <Error error={error} />
       </form>
     </section>
   );
