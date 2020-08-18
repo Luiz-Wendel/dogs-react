@@ -11,13 +11,13 @@
   transition: 0.2s;
 }
 
-button:hover,
-button:focus {
+.button:hover,
+.button:focus {
   outline: none;
   box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 }
 
-button:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: wait;
 }
