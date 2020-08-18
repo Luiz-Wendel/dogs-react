@@ -25,7 +25,7 @@ const SingIn = () => {
 
   return (
     <section className="animateLeft">
-      <h1>SignIn</h1>
+      <h1 className="title">SignIn</h1>
       <form onSubmit={handleSignIn}>
         <Input name="username" label="Username" {...username} />
         <Input name="password" label="Password" type="password" {...password} />
