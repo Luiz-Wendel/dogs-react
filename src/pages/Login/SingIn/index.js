@@ -1,4 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// CSS
+import styles from './styles.module.css';
+import btnComponentStyles from '../../../components/Button/styles.module.css';
 
 // Components
 import Input from '../../../components/Input';
@@ -27,7 +32,7 @@ const SingIn = () => {
   return (
     <section className="animateLeft">
       <h1 className="title">SignIn</h1>
-      <form onSubmit={handleSignIn}>
+      <form className={styles.form} onSubmit={handleSignIn}>
         <Input name="username" label="Username" {...username} />
         <Input name="password" label="Password" type="password" {...password} />
         {loading ? (
@@ -37,6 +42,16 @@ const SingIn = () => {
         )}
         <Error error={error} />
       </form>
+      <Link className={styles.forgot} to="/login/forgot">
+        Forgot your Password?
+      </Link>
+      <div className={styles.signup}>
+        <h2 className={styles.subtitle}>SignUp</h2>
+        <p>Don't have an account? SignUp here!</p>
+        <Link className={btnComponentStyles.button} to="/login/signup">
+          SignUp
+        </Link>
+      </div>
     </section>
   );
 };
