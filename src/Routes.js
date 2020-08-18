@@ -11,6 +11,9 @@ import Login from './pages/Login';
 import SingIn from './pages/Login/SingIn';
 import SignUp from './pages/Login/SignUp';
 import User from './pages/User';
+import Statistics from './pages/User/Statistics';
+import PhotoPost from './pages/User/PhotoPost';
+import Feed from './pages/Feed';
 
 export default () => {
   return (
@@ -20,7 +23,11 @@ export default () => {
         <Route path="signin" element={<SingIn />} />
         <Route path="signup" element={<SignUp />} />
       </Route>
-      <ProtectedRoute path="account" element={<User />} />
+      <ProtectedRoute path="account" element={<User />}>
+        <Route path="/" element={<Feed />} />
+        <Route path="statistics" element={<Statistics />} />
+        <Route path="post" element={<PhotoPost />} />
+      </ProtectedRoute>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
