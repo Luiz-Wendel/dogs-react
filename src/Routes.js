@@ -12,7 +12,7 @@ export default () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} end />
-      <Route path="login/*" element={<Login />}>
+      <Route path="login" element={<Login />}>
         <Route path="signin" element={<SingIn />} />
         <Route path="signup" element={<SignUp />} />
       </Route>
