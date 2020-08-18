@@ -14,7 +14,7 @@ import useForm from '../../../hooks/useForm';
 import { UserContext } from '../../../context/UserContext';
 
 const SingIn = () => {
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, loading, error } = React.useContext(UserContext);
   const { validate: usernameValidate, ...username } = useForm();
   const { validate: passwordValidate, ...password } = useForm();
 
@@ -32,7 +32,12 @@ const SingIn = () => {
       <form onSubmit={handleSignIn}>
         <Input name="username" label="Username" {...username} />
         <Input name="password" label="Password" type="password" {...password} />
-        <Button>SignIn</Button>
+        {loading ? (
+          <Button disabled>Loading...</Button>
+        ) : (
+          <Button>SignIn</Button>
+        )}
+        {error && <p>{error}</p>}
       </form>
     </>
   );

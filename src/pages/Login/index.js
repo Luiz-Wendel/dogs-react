@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, Navigate } from 'react-router-dom';
+
+// Context
+import { UserContext } from '../../context/UserContext';
 
 const Login = () => {
+  const { login } = React.useContext(UserContext);
+
+  if (login === true) return <Navigate to="/account" />;
   return (
     <div>
       <h1>Login</h1>
