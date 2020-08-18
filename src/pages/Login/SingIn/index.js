@@ -1,8 +1,5 @@
 import React from 'react';
 
-// API
-import { TOKEN_POST, USER_GET } from '../../../api';
-
 // Components
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
@@ -27,7 +24,7 @@ const SingIn = () => {
   }
 
   return (
-    <>
+    <section className="animateLeft">
       <h1>SignIn</h1>
       <form onSubmit={handleSignIn}>
         <Input name="username" label="Username" {...username} />
@@ -39,7 +36,7 @@ const SingIn = () => {
         )}
         {error && <p>{error}</p>}
       </form>
-    </>
+    </section>
   );
 };
 
