@@ -12,10 +12,12 @@ import { ReactComponent as LogoutIcon } from '../../assets/img/sair.svg';
 // Context
 import { UserContext } from '../../context/UserContext';
 
+// Custom Hooks
+import useMedia from '../../hooks/useMedia';
+
 const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
-
-  const [mobile, setMobile] = React.useState(null);
+  const mobile = useMedia('(max-width: 40rem)');
 
   return (
     <nav className={styles.nav}>
