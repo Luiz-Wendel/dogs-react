@@ -1,10 +1,13 @@
 import React from 'react';
 
+// Pages
+import Feed from '../Feed';
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <section className="container mainContainer">
+      <Feed />
+    </section>
   );
 };
 

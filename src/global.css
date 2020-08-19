@@ -44,6 +44,10 @@ input {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .title {
   line-height: 1;
   font-size: 3rem;

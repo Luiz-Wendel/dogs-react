@@ -1,9 +1,14 @@
 import React from 'react';
 
+// Components
+import FeedModal from '../../components/FeedModal';
+import FeedPhotos from '../../components/FeedPhotos';
+
 const Feed = () => {
   return (
     <div>
-      <h1 className="title">Feed</h1>
+      <FeedModal />
+      <FeedPhotos />
     </div>
   );
 };
