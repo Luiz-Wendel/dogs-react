@@ -10,6 +10,10 @@ const validations = {
     message:
       'Password must contain at least one digit, one lower case and one upper case! And must contain at least 6 of the mentioned characters!',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Number only!',
+  },
 };
 
 const useForm = (validation) => {
@@ -30,7 +34,6 @@ const useForm = (validation) => {
       validations[validation] &&
       !validations[validation].regex.test(value)
     ) {
-      console.log('teste');
       setError(validations[validation].message);
       return false;
     } else {
