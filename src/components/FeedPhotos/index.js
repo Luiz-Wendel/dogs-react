@@ -11,7 +11,7 @@ import Loading from '../Loading';
 import useFetch from './../../hooks/useFetch';
 import { PHOTOS_GET } from './../../api';
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -29,7 +29,11 @@ const FeedPhotos = () => {
     return (
       <ul className={`${styles.feed} animateLeft`}>
         {data.map((photo) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem
+            key={photo.id}
+            photo={photo}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </ul>
     );
