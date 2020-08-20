@@ -17,6 +17,7 @@ import User from './pages/User';
 import Statistics from './pages/User/Statistics';
 import PhotoPost from './pages/User/PhotoPost';
 import Feed from './pages/Feed';
+import Photo from './pages/Photo';
 
 export default () => {
   const { data } = React.useContext(UserContext);
@@ -33,6 +34,7 @@ export default () => {
         <Route path="statistics" element={<Statistics />} />
         <Route path="post" element={<PhotoPost />} />
       </ProtectedRoute>
+      <Route path="photo/:id" element={<Photo />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
