@@ -11,17 +11,17 @@ import Loading from '../Loading';
 import useFetch from './../../hooks/useFetch';
 import { PHOTOS_GET } from './../../api';
 
-const FeedPhotos = ({ setModalPhoto }) => {
+const FeedPhotos = ({ user, setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
-      const { response, result } = await request(url, options);
+      const { url, options } = PHOTOS_GET({ page: 1, total: 3, user });
+      await request(url, options);
     }
 
     fetchPhotos();
-  }, [request]);
+  }, [user, request]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;

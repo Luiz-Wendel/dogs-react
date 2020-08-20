@@ -4,7 +4,7 @@ import React from 'react';
 import FeedModal from '../../components/FeedModal';
 import FeedPhotos from '../../components/FeedPhotos';
 
-const Feed = () => {
+const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
 
   return (
@@ -12,7 +12,7 @@ const Feed = () => {
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
-      <FeedPhotos setModalPhoto={setModalPhoto} />
+      <FeedPhotos user={user} setModalPhoto={setModalPhoto} />
     </div>
   );
 };
