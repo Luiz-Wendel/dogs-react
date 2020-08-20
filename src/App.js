@@ -14,15 +14,17 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes />
+          <main className="AppBody">
+            <Routes />
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
