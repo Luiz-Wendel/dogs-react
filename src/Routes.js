@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SingIn from './pages/Login/SingIn';
 import SignUp from './pages/Login/SignUp';
+import PasswordForgotten from './pages/Login/PasswordForgotten';
 import User from './pages/User';
 import Statistics from './pages/User/Statistics';
 import PhotoPost from './pages/User/PhotoPost';
@@ -29,6 +30,7 @@ export default () => {
       <Route path="login" element={<Login />}>
         <Route path="signin" element={<SingIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="forgot" element={<PasswordForgotten />} />
       </Route>
       <ProtectedRoute path="account" element={<User />}>
         <Route path="/" element={<Feed user={data && data.id} />} />
