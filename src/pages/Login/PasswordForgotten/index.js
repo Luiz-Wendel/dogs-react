@@ -30,7 +30,7 @@ const PasswordForgotten = () => {
   }
 
   return (
-    <section>
+    <section className="animateLeft">
       <h1 className="title">Forgot your password?</h1>
 
       {data ? (

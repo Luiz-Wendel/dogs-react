@@ -47,7 +47,7 @@ const PasswordReset = () => {
   }
 
   return (
-    <div>
+    <section className="animateLeft">
       <h1 className="title">Password reset</h1>
       <form onSubmit={handleSubmit}>
         <Input
@@ -63,7 +63,7 @@ const PasswordReset = () => {
         )}
       </form>
       <Error error={error} />
-    </div>
+    </section>
   );
 };
 

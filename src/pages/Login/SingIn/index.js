@@ -40,7 +40,7 @@ const SingIn = () => {
         ) : (
           <Button>SignIn</Button>
         )}
-        <Error error={error} />
+        <Error error={error && 'Invalid username or password!'} />
       </form>
       <Link className={styles.forgot} to="/login/forgot">
         Forgot your Password?
